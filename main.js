@@ -18,3 +18,24 @@
 //         }
 //     });
 // })
+
+// task2
+
+const img = document.querySelectorAll('li > img');
+const mainImg = document.querySelector('.main-img');
+const p = document.querySelector('.text');
+
+
+img.forEach(el => {
+    el.addEventListener('mouseover', function(event) {
+        const target = event.currentTarget;
+        
+        let src = target.getAttribute('src');
+        let alt = target.getAttribute('alt');
+        console.log(alt);
+        
+        mainImg.setAttribute('src', src);
+        mainImg.setAttribute('alt', alt);
+        p.innerHTML = alt;
+    })
+})
